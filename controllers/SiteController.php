@@ -33,10 +33,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $query = new \yii\db\Query();
-        $query->select("Id, Titulo, Texto")
-              ->from("noticias");
-        $noticias = $query->all();
+        $noticias = \app\models\Noticias::find()->all();
         return $this->render('index', [
             "noticias"=>$noticias,
         ]);
