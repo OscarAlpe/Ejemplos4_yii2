@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Ejemplos4yii2';
 ?>
 <div class="site-index">
 
@@ -21,15 +21,11 @@ $this->title = 'My Yii Application';
     <div class="body-content">
         <div class="row">
 <?php
-for ($i=0; $i<count($noticias); $i++) {
-?>
-            <div class="col-lg-2">
-                <div class="backgris">
-                    <h2><?= $noticias[$i]["Titulo"] ?></h2>
-                    <p><?= $noticias[$i]["Texto"] ?></p>
-                </div>
-            </div>
-<?php
+    for ($i=0; $i<count($noticias); $i++) {
+        echo $this->render("_index",[
+            "noticias"=>$noticias,
+            "i"=>$i,
+        ]);
 }
 ?>
         </div>
