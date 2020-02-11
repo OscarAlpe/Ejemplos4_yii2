@@ -35,4 +35,19 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionPagina1()
+    {
+        return $this->render('pagina1');
+    }
+    
+    public function actionPagina2()
+    {
+        return $this->render('pagina2');
+    }
+
+    public function actionPagina3()
+    {
+        return $this->render('pagina3');
+    }
 }
