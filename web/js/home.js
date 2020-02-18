@@ -7,6 +7,6 @@ window.addEventListener("load",()=>{
         $('#myModal').modal('show');
       setTimeout(()=>{
         $('#myModal').modal('hide');
-      },5000);
-   },2000);
+      },10000);
+   },5000);
 });
