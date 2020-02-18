@@ -42,4 +42,10 @@ class Noticias extends \yii\db\ActiveRecord
             'Texto' => 'Texto',
         ];
     }
+    
+    public static function aleatoria() {
+        $nRegistros = self::find()->count();
+        $aleatorio = random_int(0, $nRegistros - 1);
+        return self::find()->offset($aleatorio)->one();
+    }
 }

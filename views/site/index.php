@@ -1,5 +1,7 @@
 <?php
 
+use yii\widgets\Breadcrumbs;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Ejemplos4yii2';
@@ -7,7 +9,11 @@ $this->title = 'Ejemplos4yii2';
 <div class="site-index">
 
     <div class="backgris">
-        Home
+       <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+        </div>
     </div>
     <div>
         &nbsp;

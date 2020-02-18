@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
+use \app\models\Noticias;
 
 class SiteController extends Controller
 {
@@ -34,6 +35,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $noticias = \app\models\Noticias::find()->all();
+        
         return $this->render('index', [
             "noticias"=>$noticias,
         ]);
@@ -41,7 +43,9 @@ class SiteController extends Controller
 
     public function actionPagina1()
     {
-        return $this->render('pagina1');
+        return $this->render('pagina1', [
+            "noticiaAleatoria" => Noticias::aleatoria(),
+        ]);
     }
     
     public function actionPagina2()
